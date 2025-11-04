@@ -1,19 +1,12 @@
-import "./globals.css";
-
-export const metadata = {
-    title: "Meu Projeto Next.js",
-    description: "Projeto para mostrar tudo que eu sei",
-    icons: {
-        icon: "/icons/favicon.ico",
-    },
-};
+import { ClerkProvider } from '@clerk/nextjs';
+import './globals.css';
 
 export default function RootLayout({ children }) {
-    return (
-        <html lang="pt-BR">
-            <body>
-              {children}
-            </body>
-        </html>
-    );
+  return (
+    <ClerkProvider>
+      <html lang="pt-BR">
+        <body>{children}</body>
+      </html>
+    </ClerkProvider>
+  );
 }
